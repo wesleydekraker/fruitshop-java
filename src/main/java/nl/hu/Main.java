@@ -93,10 +93,10 @@ public class Main {
         }
 
         System.out.println("Current balance: $" + balance);
-        StoreChoice1();
+        StoreChoice1(availableProducts);
     }
 
-    private static void StoreChoice1() {
+    private static void StoreChoice1(List<ProductType> availableProducts) {
         System.out.println("\nPlease choose your next action:\n 'buy': Proceed to buy one of our products.\n 'refresh': Refresh the current stock.\n 'quit': Terminates this program.");
         String input = "";
         while (!input.equals("buy") && !input.equals("refresh") && !input.equals("quit")) {
@@ -106,7 +106,6 @@ public class Main {
 
         if (input.equals("buy")) {
             System.out.println("Please choose from the products listed above. You can select a product by typing the number in front of it.");
-            List<ProductType> availableProducts = server.getAvailableProducts().getProductType();
             Scanner scanner = new Scanner(System.in);
             int choice;
             while(true) {
